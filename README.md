@@ -6,7 +6,7 @@ Use Cloudflare Tunnel to expose securely the Donkeycar simulator's Unity3D local
 
 ![](tunnel.png)
 
-### Step 0.0 - Launch the tunnel server and client with cloudfared
+### Step 0.0 - Launch the tunnel server and client with cloudflared
 
 Server on localhost
 
