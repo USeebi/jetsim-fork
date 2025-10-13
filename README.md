@@ -172,4 +172,3 @@ FINISHED
 
 ---
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/USeebi/jetsim-fork/blob/master/JETSIM_collect_images_colab.ipynb)
