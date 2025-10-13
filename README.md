@@ -1,4 +1,29 @@
-# Jetsim Master Branch
+# Jetsim Fork
+
+This branch will enable all Jupyter Notebook to work in Colab with Internet accessable Donkeycar simulator setup.
+
+Use Cloudflare Tunnel to expose securely the Donkeycar simulator's Unity3D localhost TCP connection for socket access inside a Google Colab notebook. You can do so with TryCloudflare using the documentation available [here](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/do-more-with-tunnels/trycloudflare/).
+
+![](tunnel.png)
+
+### Step 0.0 - Launch the tunnel server and client with cloudfared
+
+Server on localhost
+
+
+    .\cloudflared tunnel --url tcp://localhost:9091
+
+
+Client on Colab
+
+
+    cloudflared access tcp --hostname <SUBDOMAIN>.trycloudflare.com --url 127.0.0.1:9091 &
+
+where SUMDOMAIN is the host computer name of the Quick Tunnel created by the server.
+
+
+Jetsim Master Branch
+===
 **Summary:** This branch of Jetsim will show you how to use NVIDIA's Jetracer framework within the Google Colaboratory environment: Collect and train data from the [Donkeycar simulator](https://github.com/tawnkramer/gym-donkeycar/releases) and build an autonomous driving model that can race in virtual tournaments.
 
 ![](jetsim.png)

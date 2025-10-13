@@ -9,6 +9,8 @@ import base64
 import numpy as np
 from gym_donkeycar.core.sim_client import SDClient
 
+from num2words import num2words
+
 '''Code Reference:
 https://github.com/tawnkramer/sdsandbox/blob/master/src/test_client.py
 '''
@@ -119,6 +121,10 @@ class GymInterface(Component, SDClient):
         self.cte = 0.0
         self.lidar = None
     
+        self.last_lap_time = 0.0
+        self.current_lap_time = 0.0
+        self.lap_count = -1
+
     def step(self, *args):
         steering = args[0]
         throttle = args[1]
@@ -161,6 +167,15 @@ class GymInterface(Component, SDClient):
 
             if "lidar" in json_packet:
                 self.lidar = json_packet["lidar"]
+
+        elif json_packet['msg_type'] == "collision_with_starting_line":
+            time_at_crossing = json_packet['timeStamp']
+            self.last_lap_time = float(time_at_crossing - self.current_lap_time)
+            self.current_lap_time = time_at_crossing
+            self.lap_count += 1
+            if self.lap_count >= 1:
+                print(f"Lap: {num2words(self.lap_count)}")
+                print(f"New lap time: {round(self.last_lap_time, 2)} seconds")
 
     def send_config(self):
         '''
