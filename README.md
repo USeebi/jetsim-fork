@@ -13,13 +13,16 @@ Server on localhost
 
     .\cloudflared tunnel --url tcp://localhost:9091
 
-
 Client on Colab
 
 
     cloudflared access tcp --hostname <SUBDOMAIN>.trycloudflare.com --url 127.0.0.1:9091 &
 
-where SUMDOMAIN is the host computer name of the Quick Tunnel created by the server.
+where SUBDOMAIN is the host computer name of the Quick Tunnel created by the server.
+
+### Step 0.1 - Connect Audrino USB to Colab
+
+Download an Electron-based desktop application and server that acts as a bridge between localhost connected serial port and p5.js WebSocket access from [GitHub] (https://github.com/p5-serial/p5.serialcontrol/releases) and run the p5.serialcontrol app on your compute (localhost).
 
 
 Jetsim Master Branch
