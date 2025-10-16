@@ -22,7 +22,7 @@ where SUBDOMAIN is the host computer name of the Quick Tunnel created by the ser
 
 ### Step 0.1 - Connect Audrino USB to Colab
 
-Download an Electron-based desktop application and server that acts as a bridge between localhost connected serial port and p5.js WebSocket access from [GitHub] (https://github.com/p5-serial/p5.serialcontrol/releases) and run the p5.serialcontrol app on your compute (localhost).
+Download an Electron-based desktop application and server that acts as a bridge between localhost connected serial port and p5.js WebSocket access from [GitHub](https://github.com/p5-serial/p5.serialcontrol/releases) and run the p5.serialcontrol app on your compute (the localhost).
 
 
 Jetsim Master Branch
