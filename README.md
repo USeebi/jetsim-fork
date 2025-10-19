@@ -20,9 +20,12 @@ Client on Colab
 
 where SUBDOMAIN is the host computer name of the Quick Tunnel created by the server.
 
-### Step 0.1 - Connect Audrino USB to Colab
+### Step 0.1 - Connect Arduino USB to Colab
 
-Download an Electron-based desktop application and server that acts as a bridge between localhost connected serial port and p5.js WebSocket access from [GitHub](https://github.com/p5-serial/p5.serialcontrol/releases) and run the p5.serialcontrol app on your compute (the localhost).
+Download the Electron-based desktop application and server that acts as a bridge between localhost connected serial port and p5.js WebSocket access from [GitHub](https://github.com/p5-serial/p5.serialcontrol/releases) and run the p5.serialcontrol app on your compute (the localhost).
+
+- Default baud rate of the p5 app is hardcoded to 9600 and can only be changed from p5.js scripts
+- Connect the Arduino device using a [browser serial terminal](https://blog.adafruit.com/2022/06/27/a-web-serial-api-demo-sparkfun/) with a matching device baud rate setting to find out the correct com port to be used in the p5.js script
 
 
 Jetsim Master Branch
