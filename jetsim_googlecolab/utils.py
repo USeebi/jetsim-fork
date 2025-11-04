@@ -14,3 +14,6 @@ def preprocess(image):
     image = transforms.functional.to_tensor(image).to(device)
     image.sub_(mean[:, None, None]).div_(std[:, None, None])
     return image[None, ...]
+
+def bgr8_to_jpeg(value, quality=75):
+    return bytes(cv2.imencode('.jpg', value)[1])
