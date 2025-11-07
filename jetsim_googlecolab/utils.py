@@ -17,3 +17,13 @@ def preprocess(image):
 
 def bgr8_to_jpeg(value, quality=75):
     return bytes(cv2.imencode('.jpg', value)[1])
+
+def linear_unbin(arr, N=15, offset=-1, R=2.0):
+    '''
+    preform inverse linear_bin, taking
+    one hot encoded arr, and get max value
+    rescale given R range and offset
+    '''
+    b = np.argmax(arr)
+    a = b * (R / (N + offset)) + offset
+    return a
